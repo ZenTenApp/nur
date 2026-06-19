@@ -9,37 +9,37 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "1sn7d9dyw1skx91qsr1gsi03i0p3mbg9n181zi8bayvcanxnb3q1";
-    x86_64-linux = "1ddf49w5jfzhl6qg114mdiqc0qgb84a1s0sdsgriv5rrx705j6zk";
-    armv6l-linux = "0yjddk49qv5yc4pbj5yafzgb4nkr5l49ig9bflw7fxgnbm9avjm5";
-    armv7l-linux = "12jwiqmsfzkgjg15ix90lvy3804ij3x009v1k8369ahvnzicps74";
-    aarch64-linux = "0ad87wgz3gj6savxgjancf2db3lnlzkv6v3h5nbcgxssxnw8x47f";
-    x86_64-darwin = "0fs3qj5vvsaj3hw8i5ah8aw9bkyc5xhalin6v7vlv9v99kb2picl";
-    aarch64-darwin = "1nyrbr6y0cj748wl4svyga7c4bg8xj6f00b7wnidzqf5qswxsixg";
+    i686-linux = "0yy2wyn9rvrdfp0819q39f16zcbjzpkhg81m7rmjay22xrxaqd3k";
+    x86_64-linux = "1ga5702by6zbqirxldckrfv7y906bx9704h0gs86iv96nwyrn06v";
+    armv6l-linux = "1vd088dzfhhp7zf08g0rjzwri1v60cvqc2szlb7p08qysf4m01jl";
+    armv7l-linux = "18919q5lnrvdpk3ndkc2s8ya6fpgdnvyl8mk0m50yixjk7q3gm50";
+    aarch64-linux = "0m5xki6apyqwf4b9vf28bkkshqpdfddpv3g6zqzkniiwydcxgfls";
+    x86_64-darwin = "1q0fwvgj2c9xsls5csj6gzz67igw6i15l9cdqs6q2xd3pgy4c0qq";
+    aarch64-darwin = "11pfcdmx74s0sq2hxa8lm2wv2kwf8ixl39v5s6lm6xagar0kmk2m";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Linux_x86_64.tar.gz";
-    armv6l-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Linux_armv6.tar.gz";
-    armv7l-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/ZenTenApp/seedify/releases/download/v1.24.0/seedify_1.24.0_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Linux_x86_64.tar.gz";
+    armv6l-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Linux_armv6.tar.gz";
+    armv7l-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/ZenTenApp/seedify/releases/download/v1.25.0/seedify_1.25.0_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
-    i686-linux = "seedify_1.24.0_Linux_i386";
-    x86_64-linux = "seedify_1.24.0_Linux_x86_64";
-    armv6l-linux = "seedify_1.24.0_Linux_armv6";
-    armv7l-linux = "seedify_1.24.0_Linux_armv7";
-    aarch64-linux = "seedify_1.24.0_Linux_arm64";
-    x86_64-darwin = "seedify_1.24.0_Darwin_x86_64";
-    aarch64-darwin = "seedify_1.24.0_Darwin_arm64";
+    i686-linux = "seedify_1.25.0_Linux_i386";
+    x86_64-linux = "seedify_1.25.0_Linux_x86_64";
+    armv6l-linux = "seedify_1.25.0_Linux_armv6";
+    armv7l-linux = "seedify_1.25.0_Linux_armv7";
+    aarch64-linux = "seedify_1.25.0_Linux_arm64";
+    x86_64-darwin = "seedify_1.25.0_Darwin_x86_64";
+    aarch64-darwin = "seedify_1.25.0_Darwin_arm64";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "seedify";
-  version = "1.24.0";
+  version = "1.25.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
