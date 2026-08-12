@@ -9,37 +9,37 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "0cixc4ga95j9kc1zcdpa6mmxdag6kxqli8amjd1ysxjb2id9hii1";
-    x86_64-linux = "039inxba852addzjbb2kfl81nmr490wz40jqvbn119mycngcjnk8";
-    armv6l-linux = "0xfvqcmlqswgah5jbnmaz12lx16g96jxib8plwgaf6jbw9050c38";
-    armv7l-linux = "18nnbgs59vrwd1hiqp3784sj839b97zpp40mbrrigjga4pbmkrs1";
-    aarch64-linux = "02i3afjvv5i88rmk9h3x6s3830n4qbnni1jbv4wsnwplb26d3gyc";
-    x86_64-darwin = "018f942j3i1jyh5ia3ssg84a5mznr3sfgbnbrmhgva7xhqjx6lcc";
-    aarch64-darwin = "1wd4i9wb1dqccrwygl9b58497nw8r9ad1fc5k4m4l1w4fvywp9q5";
+    i686-linux = "06ai9p9lib0rrfqx67h9i18vf34949qaw1h9rc65jra8k1axsrxn";
+    x86_64-linux = "1jwpc8x0pygaikpbasjjp9qzwqmmc8mavsr90m2lks0qdp5pa3qi";
+    armv6l-linux = "1dybb9b23nlfjn0lhn42qkd03hqg4hvm0x7iqkbv6l2q0iylr8lz";
+    armv7l-linux = "0h6c22s5rhl57qr2i77ynm7chh4nl0rqd4c5kmzygam47c2n6kz0";
+    aarch64-linux = "07kzsp36mjw04shnqh76jzwspb64bxc03pf5afg1zxk0g4m33n9p";
+    x86_64-darwin = "066nd6i82ka0kapz356y6nf18fv8xdhc1nhbagbr5qrlh1gccgkd";
+    aarch64-darwin = "10lxac2y7if9dbj9vg7nfffvdydrd4rgxiiw4vwgnggg1ws8acpk";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_x86_64.tar.gz";
-    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_armv6.tar.gz";
-    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Linux_x86_64.tar.gz";
+    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Linux_armv6.tar.gz";
+    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.4/meltify_0.1.4_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
-    i686-linux = "meltify_0.1.3_Linux_i386";
-    x86_64-linux = "meltify_0.1.3_Linux_x86_64";
-    armv6l-linux = "meltify_0.1.3_Linux_armv6";
-    armv7l-linux = "meltify_0.1.3_Linux_armv7";
-    aarch64-linux = "meltify_0.1.3_Linux_arm64";
-    x86_64-darwin = "meltify_0.1.3_Darwin_x86_64";
-    aarch64-darwin = "meltify_0.1.3_Darwin_arm64";
+    i686-linux = "meltify_0.1.4_Linux_i386";
+    x86_64-linux = "meltify_0.1.4_Linux_x86_64";
+    armv6l-linux = "meltify_0.1.4_Linux_armv6";
+    armv7l-linux = "meltify_0.1.4_Linux_armv7";
+    aarch64-linux = "meltify_0.1.4_Linux_arm64";
+    x86_64-darwin = "meltify_0.1.4_Darwin_x86_64";
+    aarch64-darwin = "meltify_0.1.4_Darwin_arm64";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "meltify";
-  version = "0.1.3";
+  version = "0.1.4";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -52,9 +52,17 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     mkdir -p $out/bin
     cp -vr ./meltify $out/bin/meltify
+    cp -vr ./meltify-brave $out/bin/meltify-brave
     cp -vr ./meltify-beldex $out/bin/meltify-beldex
+    cp -vr ./meltify-monero $out/bin/meltify-monero
+    cp -vr ./meltify-polyseed $out/bin/meltify-polyseed
+    cp -vr ./meltify-info $out/bin/meltify-info
     installManPage ./manpages/meltify.1.gz
+    installManPage ./manpages/meltify-brave.1.gz
     installManPage ./manpages/meltify-beldex.1.gz
+    installManPage ./manpages/meltify-monero.1.gz
+    installManPage ./manpages/meltify-polyseed.1.gz
+    installManPage ./manpages/meltify-info.1.gz
     installShellCompletion ./completions/*
   '';
 
