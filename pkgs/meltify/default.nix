@@ -9,37 +9,37 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "1cwnq7na7q9msxqfsqw6g8xz5qllwij4ghfd3jrcx31f9z50i2dm";
-    x86_64-linux = "0bxpj4wgqb1p0gs6ifs3nb8rzaq53byp413s309ygxlqqj9xpnrc";
-    armv6l-linux = "04v0fjlp38yqv0nmjs0j5994347bz17r2s8fic5jj2cymihk81d4";
-    armv7l-linux = "07l8qchg8kpl3ppfmz4iqbz7vfb6ylvipfaz4igw9a04s4043biq";
-    aarch64-linux = "0xbqasf165jxqy4wwz4dbspqayk8rxs8wdqs6icq1r6mcrd92j39";
-    x86_64-darwin = "0szs9gf5sbhvncqjxkybj7m07bz5g8brs3603x87drxw0ghi3nsc";
-    aarch64-darwin = "0ns4l2jh2yck5jiyn4vcq1wn1hb3l4xcnpg66xc42cr369kn2jlh";
+    i686-linux = "198xdwr0vnbnkylnzwc5225wqbyl3j8hcglxxvh8a5f5mshgq5rr";
+    x86_64-linux = "0by9q9f0fqvg99ssq0jfipifidv37f8ayhchs5icakhidjm6awnc";
+    armv6l-linux = "0yx4mizmdn8qmjrx44p323cxfj1ws8z0wbpfy8wd3k0syqj1g8rg";
+    armv7l-linux = "0jw59rk370d6xdy3771xv5llgf0lw34jcm01kvn96wlp14p5jsia";
+    aarch64-linux = "1hvf7dsmwrcaq9z8vxdrmhmcaps12993fl2ad05m33572yg0dykl";
+    x86_64-darwin = "1zk6dbcfrykcc6cqc2q3xh79w0vvzibx9pl9k73j4fi8jf93hgkm";
+    aarch64-darwin = "1c969dwyzi398lknkih1vvmh51hy42vx11fyvcqm6868ly6jszp9";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Linux_x86_64.tar.gz";
-    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Linux_armv6.tar.gz";
-    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.8/meltify_0.1.8_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_x86_64.tar.gz";
+    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_armv6.tar.gz";
+    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
-    i686-linux = "meltify_0.1.8_Linux_i386";
-    x86_64-linux = "meltify_0.1.8_Linux_x86_64";
-    armv6l-linux = "meltify_0.1.8_Linux_armv6";
-    armv7l-linux = "meltify_0.1.8_Linux_armv7";
-    aarch64-linux = "meltify_0.1.8_Linux_arm64";
-    x86_64-darwin = "meltify_0.1.8_Darwin_x86_64";
-    aarch64-darwin = "meltify_0.1.8_Darwin_arm64";
+    i686-linux = "meltify_0.1.9_Linux_i386";
+    x86_64-linux = "meltify_0.1.9_Linux_x86_64";
+    armv6l-linux = "meltify_0.1.9_Linux_armv6";
+    armv7l-linux = "meltify_0.1.9_Linux_armv7";
+    aarch64-linux = "meltify_0.1.9_Linux_arm64";
+    x86_64-darwin = "meltify_0.1.9_Darwin_x86_64";
+    aarch64-darwin = "meltify_0.1.9_Darwin_arm64";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "meltify";
-  version = "0.1.8";
+  version = "0.1.9";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
