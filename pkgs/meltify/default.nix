@@ -9,37 +9,37 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "1zn6mblylnkipy52svdb1rmzfi9dk78j5lkvrnjkxa0i5fpbxc12";
-    x86_64-linux = "1fjm6aghv2yg660hhg59imlppmq06711qqfllpcf9r538678dqlp";
-    armv6l-linux = "1kq4cwrx3zdvvy9v1w83m7fwan5i4ykwbc0m38xvcaqv4ns3isq1";
-    armv7l-linux = "0vq3nx4jnks5l6xr800dc95q8gkrlvymhk1dpb43iyzl86cvgiqy";
-    aarch64-linux = "0i16lk6q3xgn10rnycy2rn31dqg4s4gr0qbks348qzavyi9w574c";
-    x86_64-darwin = "069qc7qni3jhny97521xchxn66lkj847macgzj19jaxkcza6qbfc";
-    aarch64-darwin = "0in84q3r49g38k7p1206q58m18knvn8k4pj577h76193ln2z9ab0";
+    i686-linux = "11kimlr0p272dwasv2hv4bb74ajiwf3k4qx04sag4nymzxswgsjr";
+    x86_64-linux = "1zq6gpfsb2flrzqslcwi6g7ajypaa0mfhvrpkiragd11yiyrk9kh";
+    armv6l-linux = "1dfryp4kz3n7ahm3q43fv66b1417vmj2d3jcnrszf55pczhqj5cb";
+    armv7l-linux = "07bymv3x5iv33gg1fzy4jkwwzdc6faas5nc2f04vis5p07mglsw5";
+    aarch64-linux = "1d3sxl7d7c4hprlikhlngzfc9wb0k42f51jkif2pcjx3hvx53ghg";
+    x86_64-darwin = "0h4fv4dmjpg2apjnanr31karx3jv4kbkwhkqz7p3z2bpfcr61nvb";
+    aarch64-darwin = "0fki07agmr7sn3xfircjxz47ih63bjsck59zn6y7y3javxwidmxa";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Linux_x86_64.tar.gz";
-    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Linux_armv6.tar.gz";
-    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.22/meltify_0.1.22_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Linux_x86_64.tar.gz";
+    armv6l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Linux_armv6.tar.gz";
+    armv7l-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/ZenTenApp/meltify/releases/download/v0.1.23/meltify_0.1.23_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
-    i686-linux = "meltify_0.1.22_Linux_i386";
-    x86_64-linux = "meltify_0.1.22_Linux_x86_64";
-    armv6l-linux = "meltify_0.1.22_Linux_armv6";
-    armv7l-linux = "meltify_0.1.22_Linux_armv7";
-    aarch64-linux = "meltify_0.1.22_Linux_arm64";
-    x86_64-darwin = "meltify_0.1.22_Darwin_x86_64";
-    aarch64-darwin = "meltify_0.1.22_Darwin_arm64";
+    i686-linux = "meltify_0.1.23_Linux_i386";
+    x86_64-linux = "meltify_0.1.23_Linux_x86_64";
+    armv6l-linux = "meltify_0.1.23_Linux_armv6";
+    armv7l-linux = "meltify_0.1.23_Linux_armv7";
+    aarch64-linux = "meltify_0.1.23_Linux_arm64";
+    x86_64-darwin = "meltify_0.1.23_Darwin_x86_64";
+    aarch64-darwin = "meltify_0.1.23_Darwin_arm64";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "meltify";
-  version = "0.1.22";
+  version = "0.1.23";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -65,6 +65,7 @@ stdenvNoCC.mkDerivation {
     cp -vr ./meltify-dnssec $out/bin/meltify-dnssec
     cp -vr ./meltify-i2p $out/bin/meltify-i2p
     cp -vr ./meltify-wireguard $out/bin/meltify-wireguard
+    cp -vr ./meltify-jks $out/bin/meltify-jks
     installManPage ./manpages/meltify.1.gz
     installManPage ./manpages/meltify-brave.1.gz
     installManPage ./manpages/meltify-beldex.1.gz
@@ -78,6 +79,7 @@ stdenvNoCC.mkDerivation {
     installManPage ./manpages/meltify-dnssec.1.gz
     installManPage ./manpages/meltify-i2p.1.gz
     installManPage ./manpages/meltify-wireguard.1.gz
+    installManPage ./manpages/meltify-jks.1.gz
     installShellCompletion ./completions/*
     runHook postInstall
   '';
